@@ -28,6 +28,7 @@ s_mag = 20*log10(abs(s21));
 mod_s_mag = 20*log10(abs(mod_s21));
 
 %find minimum value of s21 (resonance)
+%requires vline.m file from the Matlab file share, comment out if needed
 [low,I] = min(s_mag);
 resonance = freq(I);
 [mod_low,mod_I] = min(mod_s_mag);
@@ -37,6 +38,7 @@ v2 = vline(mod_resonance,'g');
 hold off
 
 %find phi0 of phase at resonance
+%requires hline.m file from the Matlab file share, comment out if needed
 phi0 = ang(I);
 mod_phi0 = mod_ang(mod_I);
 error = abs(phi0-mod_phi0);
